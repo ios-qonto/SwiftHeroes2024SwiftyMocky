@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		10143BF04CE19BD8FD293F80 /* Pods_SwiftHeroes2024SwiftyMocky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E00F933199609E62BE049DB /* Pods_SwiftHeroes2024SwiftyMocky.framework */; };
 		B5C3989D2B56C2BE00C44508 /* SwiftHeroes2024SwiftyMocky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C398942B56C2BD00C44508 /* SwiftHeroes2024SwiftyMocky.framework */; };
-		B5C398A22B56C2BE00C44508 /* SwiftHeroes2024SwiftyMockyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C398A12B56C2BE00C44508 /* SwiftHeroes2024SwiftyMockyTests.swift */; };
+		B5C398A22B56C2BE00C44508 /* PresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C398A12B56C2BE00C44508 /* PresenterTests.swift */; };
 		B5C398A32B56C2BE00C44508 /* SwiftHeroes2024SwiftyMocky.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C398972B56C2BD00C44508 /* SwiftHeroes2024SwiftyMocky.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5C398AE2B56C33900C44508 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C398AD2B56C33900C44508 /* Presenter.swift */; };
 		B5C398B02B56CB5100C44508 /* Mock.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C398AF2B56CB5100C44508 /* Mock.generated.swift */; };
@@ -34,7 +34,7 @@
 		B5C398942B56C2BD00C44508 /* SwiftHeroes2024SwiftyMocky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftHeroes2024SwiftyMocky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C398972B56C2BD00C44508 /* SwiftHeroes2024SwiftyMocky.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftHeroes2024SwiftyMocky.h; sourceTree = "<group>"; };
 		B5C3989C2B56C2BD00C44508 /* SwiftHeroes2024SwiftyMockyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftHeroes2024SwiftyMockyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5C398A12B56C2BE00C44508 /* SwiftHeroes2024SwiftyMockyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHeroes2024SwiftyMockyTests.swift; sourceTree = "<group>"; };
+		B5C398A12B56C2BE00C44508 /* PresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTests.swift; sourceTree = "<group>"; };
 		B5C398AD2B56C33900C44508 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		B5C398AF2B56CB5100C44508 /* Mock.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.generated.swift; sourceTree = "<group>"; };
 		DD820CF27F767A792A308442 /* Pods-SwiftHeroes2024SwiftyMocky-SwiftHeroes2024SwiftyMockyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftHeroes2024SwiftyMocky-SwiftHeroes2024SwiftyMockyTests.release.xcconfig"; path = "Target Support Files/Pods-SwiftHeroes2024SwiftyMocky-SwiftHeroes2024SwiftyMockyTests/Pods-SwiftHeroes2024SwiftyMocky-SwiftHeroes2024SwiftyMockyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		B5C398A02B56C2BE00C44508 /* SwiftHeroes2024SwiftyMockyTests */ = {
 			isa = PBXGroup;
 			children = (
-				B5C398A12B56C2BE00C44508 /* SwiftHeroes2024SwiftyMockyTests.swift */,
+				B5C398A12B56C2BE00C44508 /* PresenterTests.swift */,
 				B5C398AF2B56CB5100C44508 /* Mock.generated.swift */,
 			);
 			path = SwiftHeroes2024SwiftyMockyTests;
@@ -306,7 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5C398B02B56CB5100C44508 /* Mock.generated.swift in Sources */,
-				B5C398A22B56C2BE00C44508 /* SwiftHeroes2024SwiftyMockyTests.swift in Sources */,
+				B5C398A22B56C2BE00C44508 /* PresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

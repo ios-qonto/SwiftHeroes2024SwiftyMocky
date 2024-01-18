@@ -29,7 +29,8 @@ final class Presenter {
         self.displayer = displayer
     }
 
-    func onViewDidLoad() {
+    @discardableResult
+    func onViewDidLoad() -> Task<Void, Never> {
         Task {
             do {
                 let text = try await useCase.getContent(id: id)
