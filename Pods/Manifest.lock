@@ -1,0 +1,20 @@
+PODS:
+  - Sourcery (1.6.0)
+  - SwiftyMocky (4.1.0):
+    - Sourcery (= 1.6.0)
+
+DEPENDENCIES:
+  - SwiftyMocky
+
+SPEC REPOS:
+  trunk:
+    - Sourcery
+    - SwiftyMocky
+
+SPEC CHECKSUMS:
+  Sourcery: 744f43178637c79bf23127dfe34e2103b3f28499
+  SwiftyMocky: 014739247afadb65efb5bb92ede32c22b9365762
+
+PODFILE CHECKSUM: c9fab9d9e8513805013c3efaddfa36847afc2b33
+
+COCOAPODS: 1.12.0

@@ -1,0 +1,6 @@
+framework module Pods_SwiftHeroes2024SwiftyMocky {
+  umbrella header "Pods-SwiftHeroes2024SwiftyMocky-umbrella.h"
+
+  export *
+  module * { export * }
+}
