@@ -1,0 +1,14 @@
+sourceryCommand: sourcery
+sourceryTemplate: ./Mock.swifttemplate
+
+SwiftHeroes2024SwiftyMockyTests:
+  sources:
+    include:
+    - ./SwiftHeroes2024SwiftyMocky
+  output: ./SwiftHeroes2024SwiftyMockyTests/Mock.generated.swift
+  targets:
+  - SwiftHeroes2024SwiftyMockyTests
+  testable:
+  - SwiftHeroes2024SwiftyMocky
+  import:
+  - Foundation
