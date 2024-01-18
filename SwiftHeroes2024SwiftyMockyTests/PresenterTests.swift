@@ -12,34 +12,42 @@ final class PresenterTests: XCTestCase {
     private let useCase = UseCaseMock()
     private let displayer = DisplayerMock()
 
-    func test_onViewDidLoad_givenId_thenCallsUseCase() async throws {
+    func test_displayContent_givenId_thenCallsUseCase() async throws {
         // GIVEN
         let id = "id"
-        let underTest = Presenter(id: id, useCase: useCase, displayer: displayer)
+        let underTest = Presenter(useCase: useCase, displayer: displayer)
         useCase.given(.getContent(id: .value(id), willReturn: "Content"))
 
         // WHEN
-        let task = underTest.onViewDidLoad()
+        let task = underTest.displayContent(for: id)
 
         // THEN
         await task.value
         useCase.verify(.getContent(id: .value(id)))
     }
 
-    func test_onViewDidLoad_givenOtherId_thenUpdatesDisplayerWithOtherContent() async throws {
+    func test_displayContent_givenOtherId_thenUpdatesDisplayerWithOtherContent() async throws {
         // GIVEN
         let id = "id"
         let otherId = "otherId"
+        let content = "Content"
         let otherContent = "OtherContent"
-        let underTest = Presenter(id: otherId, useCase: useCase, displayer: displayer)
-        useCase.given(.getContent(id: .value(id), willReturn: "Content"))
+        let underTest = Presenter(useCase: useCase, displayer: displayer)
+        useCase.given(.getContent(id: .value(id), willReturn: content))
         useCase.given(.getContent(id: .value(otherId), willReturn: otherContent))
 
         // WHEN
-        let task = underTest.onViewDidLoad()
+        let task = underTest.displayContent(for: id)
 
         // THEN
         await task.value
+        displayer.verify(.display(text: .value(content)))
+
+        // WHEN
+        let otherTask = underTest.displayContent(for: otherId)
+
+        // THEN
+        await otherTask.value
         displayer.verify(.display(text: .value(otherContent)))
     }
 }

@@ -19,18 +19,16 @@ protocol Displayer: AnyObject {
 }
 
 final class Presenter {
-    private let id: String
     private let useCase: UseCase
     private weak var displayer: Displayer?
 
-    init(id: String, useCase: UseCase, displayer: Displayer) {
-        self.id = id
+    init(useCase: UseCase, displayer: Displayer) {
         self.useCase = useCase
         self.displayer = displayer
     }
 
     @discardableResult
-    func onViewDidLoad() -> Task<Void, Never> {
+    func displayContent(for id: String) -> Task<Void, Never> {
         Task {
             do {
                 let text = try await useCase.getContent(id: id)
