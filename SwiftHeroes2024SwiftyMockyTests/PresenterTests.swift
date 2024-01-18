@@ -9,6 +9,8 @@ import XCTest
 @testable import SwiftHeroes2024SwiftyMocky
 
 final class PresenterTests: XCTestCase {
+    struct UseCaseError: Error {}
+
     private let useCase = UseCaseMock()
     private let displayer = DisplayerMock()
 
@@ -26,7 +28,7 @@ final class PresenterTests: XCTestCase {
         useCase.verify(.getContent(id: .value(id)))
     }
 
-    func test_displayContent_givenOtherId_thenUpdatesDisplayerWithOtherContent() async throws {
+    func test_displayContent_givenOtherId_andUseCaseSuccess_thenUpdatesDisplayerWithOtherContent() async throws {
         // GIVEN
         let id = "id"
         let otherId = "otherId"
@@ -49,5 +51,19 @@ final class PresenterTests: XCTestCase {
         // THEN
         await otherTask.value
         displayer.verify(.display(text: .value(otherContent)))
+    }
+
+    func test_displayContent_givenUseCaseError_thenUpdatesDisplayerWithOtherContent() async throws {
+        // GIVEN
+        let error = UseCaseError()
+        let underTest = Presenter(useCase: useCase, displayer: displayer)
+        useCase.given(.getContent(id: .any, willThrow: error))
+
+        // WHEN
+        let task = underTest.displayContent(for: "")
+
+        // THEN
+        await task.value
+        displayer.verify(.display(error: .value(error.localizedDescription)))
     }
 }
